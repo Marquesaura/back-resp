@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simples Quiz</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            margin: 50px;
+            background-color: blanchedalmond;
+            color: rgb(0, 0, 72);
+        }
+
+        button {
+            border-color: rgb(0, 0, 72);
+            color: blanchedalmond;
+            background-color: rgb(0, 0, 72);
+            width: 25%;
+            height: 50px;
+            border-radius: 15px;
+            font-size: 20px;
+            cursor: help;
+            margin-top: 1%;
+        }
+    </style>
+</head>
+
+<body id="main">
+    <h1>Quizz</h1>
+    <main>
+        <h2>Qual a Capital do Brasil?</h2>
+        <button onclick="verificarResposta ('A')" id="errada">A) Sorocaba</button><br>
+        <button onclick="verificarResposta ('B')" id="errada">B) BC</button><br>
+        <button onclick="verificarResposta ('C')" id="correta">C) Cianorte</button><br>
+        <button onclick="verificarResposta ('D')" id="errada">D) Buenos Aires</button>
+        <div id= "resultado" ></div>
+    </main>
+
+    <script>
+        function verificarResposta(resposta){
+            var correta = 'C';
+            var resultado = document.getElementById("resultado");
+            var err = document.getElementById("errada");
+            var cor = document.getElementById("correta");
+            var tudo = document.getElementById("main");
+
+            if( resposta === correta){
+                resultado.textContent = "Parabéns!";
+                resultado.style.color = "black";
+                cor.style.backgroundColor = "green"
+                tudo.style.backgroundColor = "green"
+                
+            }else{
+                resultado.textContent = "Errou";
+                resultado.style.color = "black";
+                err.style.backgroundColor = "red"
+                cor.style.backgroundColor = "green"
+                tudo.style.backgroundColor = "red"
+            }
+        }
+
+    </script>
+</body>
+
+</html>
